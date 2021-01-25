@@ -29,9 +29,9 @@ public class Libro {
         this.estado = Estados.DISPONIBLE;
     }
 
+    @Override
     public String toString(){
-        if(this.titulo != null && this.autor != null && this.isbn != null && this.estado != null){
-            System.out.println("Los datos del libro no fueron completados");
+        if(this.titulo == null && this.autor == null && this.isbn == null && this.estado == null){
             return "Los datos del libro no fueron completados";
         } else {
             StringBuilder sb = new StringBuilder();
@@ -41,7 +41,7 @@ public class Libro {
             sb.append(", ");
             sb.append(this.autor);
             sb.append(", ");
-            sb.append(this.titulo);
+            sb.append(this.estado);
 
             return sb.toString();
         }
@@ -69,5 +69,13 @@ public class Libro {
 
     public void setAutor(String autor) {
         this.autor = autor;
+    }
+
+    public Estados getEstado() {
+        return estado;
+    }
+
+    public void setEstado(Estados estado) {
+        this.estado = estado;
     }
 }
